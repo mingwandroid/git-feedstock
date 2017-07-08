@@ -1,25 +1,23 @@
-{% set version = "2.12.2" %}
+{% set version = "2.13.2" %}
 
 package:
   name: git
   version: {{ version }}
 
 source:
-  fn: git-{{ version }}.tar.gz                                                                                                   # [unix]
+  fn: git-{{ version }}.tar.gz                                                                                                    # [unix]
   url: https://github.com/git/git/archive/v{{ version }}.tar.gz                                                                   # [unix]
-  sha256: ae982d02ed9b58cb8f2cde01b6ba68c67a68fe19944e59388e3875eddb267a4f                                                        # [unix]
-  fn: PortableGit-{{ version }}-32-bit.7z.exe                                                                                     # [win32]
+  sha256: 4e218924b70b376db6f2a39b7c945da91becca77732d68d7aa14796844840b97                                                        # [unix]
   url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-32-bit.7z.exe  # [win32]
-  sha256: 52c236fead982c31733e43fb7361a4982b2d1c0a54a011f68b074ec7f64436c3                                                        # [win32]
-  fn: PortableGit-{{ version }}-64-bit.7z.exe                                                                                     # [win64]
+  sha256: 125c3402971849f478bcdc6904babfc235fdea4e731e31f9a5339cf0e422685a                                                        # [win32]
   url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-64-bit.7z.exe  # [win64]
-  sha256: 6a366a5b5702d24b401aba6b022d502b5f6597e00654075e491319878ba0a535                                                        # [win64]
+  sha256: 7cdb0234bffdd6dd0cd441da97e87b233d344790e4d957059ff09217fe48765d                                                        # [win64]
 
 build:
-  number: 5
+  number: 0
   skip: true  # [win and not py27]
   # git hardcodes paths to external utilities (e.g. curl)
-  detect_binary_files_with_prefix: true
+  detect_binary_files_with_prefix: True
 
 requirements:
   build:
